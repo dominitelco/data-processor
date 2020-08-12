@@ -28,7 +28,8 @@ The project can be edited with a simple editor like [Visual Studio Code](https:/
 1. Compile the project : `mvn compile`
 2. Compile and run tests: `mvn test`
 3. Run the console application: `mvn exec:java -Dexec.mainClass=dataprocessor.App`
-4. Run the console application with arguments: `mvn exec:java -Dexec.mainClass=dataprocessor.App -Dexec.args="We came from console"`
-5. Run console app from jar file `java -cp dataprocessor-<version>.jar dataprocessor.App Some Console Args`
+4. Process a `.csv` values file: `mvn exec:java -Dexec.mainClass=dataprocessor.App -Dexec.args="<full-path-to-file>/the_file_.csv"` (Remember works only with ***FULL PATHS***)
+5. Process a `.csv` values file: 
+    1. `cd target`
+    1. `java -cp dataprocessor-<version>.jar dataprocessor.App <full-path-to-file>/the_file_.csv`
 6. Simulate CI build: `mvn -B verify`
-7. Process a `.csv` values file: `mvn exec:java -Dexec.mainClass=dataprocessor.App -Dexec.args="<full-path-to-file>/the_file_.csv"` (Remember works only with ***FULL PATHS***)
