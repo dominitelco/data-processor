@@ -34,4 +34,14 @@ public class CallsFileDecoratorTest {
         
         assertTrue( decorator.decorateLines().size() == 2 );
     }
+
+    @Test
+    public void read_file_line_into_data_model() {
+        List<String> fakeLines = new ArrayList<String>();
+        fakeLines.add("NUMERO_SERVICIO,TIPO_FACTURACION, APLICACION_USADA, FECHA_HORA_INICIO,FECHA_HORA_FIN,KB_DATA_CONSUMIDA");
+        fakeLines.add("Peter,Parker");
+
+        CallsFileReader reader = mock(CallsFileReader.class);
+        when(reader.readAllLines()).thenReturn(fakeLines);
+    }
 }
