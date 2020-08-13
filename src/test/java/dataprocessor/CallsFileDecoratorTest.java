@@ -37,11 +37,25 @@ public class CallsFileDecoratorTest {
 
     @Test
     public void read_file_line_into_data_model() {
-        List<String> fakeLines = new ArrayList<String>();
-        fakeLines.add("NUMERO_SERVICIO,TIPO_FACTURACION, APLICACION_USADA, FECHA_HORA_INICIO,FECHA_HORA_FIN,KB_DATA_CONSUMIDA");
-        fakeLines.add("Peter,Parker");
+        String fakeLines = "18096886027,POSTPAGO,AMAZON_MUSIC,2020-06-31 10:49:27,2020-06-31 11:59:30,2560";
+        DataModel model = convertFileToDataModel(fakeLines);
+        Assert.assertEquals(model.getServiceNumber(), fakeLines.split(",").get(0));
+        Assert.assertEquals(model.getBillingType(), fakeLines.split(",").get(1));
+        Assert.assertEquals(model.getUsedApp(), fakeLines.split(",").get(2));
+        
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = sdf.parse(CalendarfakeLines.split(",").get(4));
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
 
-        CallsFileReader reader = mock(CallsFileReader.class);
-        when(reader.readAllLines()).thenReturn(fakeLines);
+        Assert.assertEquals(model.getInitDate(), fakeLines.split(",").get(3));
+
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        date = sdf.parse(CalendarfakeLines.split(",").get(4));
+        cal = Calendar.getInstance();
+        cal.setTime(date);
+        
+        Assert.assertEquals(model.getEndDate().toString(), cal.toString());
+        Assert.assertEquals(model.getKilobytesConsumed(), fakeLines.split(",").get(5));
     }
 }
