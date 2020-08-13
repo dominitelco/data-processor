@@ -30,6 +30,7 @@ public class App
         CallsFileDecorator decorator = new CallsFileDecorator(reader);
         userDataRecords = new ArrayList<>();
         Long totalMesActual = 0L;
+        System.out.print("Total lines: " + decorator.decorateLines().size());
         for (int i = 1 ; i < decorator.decorateLines().size(); i++) {
             String line = decorator.decorateLines().get(i);
             DataModel model = new DataModel().getFromStringLine(line);
@@ -38,7 +39,7 @@ public class App
             }
             userDataRecords.add(model);
         }
-        System.out.print("\n---------- FACTURA MES ACTUAL ---------\n");
+        System.out.print("\n\n---------- FACTURA MES ACTUAL ---------\n");
         System.out.print(String.format("Total a pagar: %s", totalMesActual));
         System.out.print("\n\n\n---------- FIN FACTURA MES ACTUAL ---------\n\n\n");
     }
