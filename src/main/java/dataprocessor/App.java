@@ -30,13 +30,6 @@ public class App
         CallsFileDecorator decorator = new CallsFileDecorator(reader);
         userDataRecords = new ArrayList<>();
         Long totalMesActual = 0L;
-//        for (String line : decorator.decorateLines()) {
-//            DataModel model = new DataModel().getFromStringLine(line);
-//            if (model.getInitDate().getTimeInMillis() >= Calendar.getInstance().getTimeInMillis() && model.getEndDate().getTimeInMillis() <= Calendar.getInstance().getTimeInMillis()) {
-//                totalMesActual += model.getKilobytesConsumed().longValue() * 5L;
-//            }
-//            userDataRecords.add(model);
-//        }
         for (int i = 1 ; i < decorator.decorateLines().size(); i++) {
             String line = decorator.decorateLines().get(i);
             DataModel model = new DataModel().getFromStringLine(line);

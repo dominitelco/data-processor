@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ae447a39-84cc-4dd2-8fdc-dc362614b44e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/dataprocessor/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataprocessor/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataprocessor/DataModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataprocessor/DataModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dataprocessor/CallsFileDecoratorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dataprocessor/CallsFileDecoratorTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -34,8 +32,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/dataprocessor/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="52" column="62" lean-forward="true" selection-start-line="52" selection-start-column="62" selection-end-line="52" selection-end-column="62" />
+            <state relative-caret-position="115">
+              <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -225,6 +223,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -341,7 +340,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1597327674998</updated>
-      <workItem from="1597327679030" duration="3750000" />
+      <workItem from="1597327679030" duration="3813000" />
     </task>
     <task id="LOCAL-00001" summary="adding data model">
       <created>1597331288513</created>
@@ -359,7 +358,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3750000" />
+    <option name="totallyTimeSpent" value="3813000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -372,7 +371,7 @@
       <window_info id="Favorites" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24969475" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" weight="0.4234694" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.4234694" />
       <window_info anchor="bottom" id="Docker" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Messages" />
@@ -381,7 +380,7 @@
       <window_info anchor="bottom" id="Regex Tester" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.49081632" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.49081632" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -465,8 +464,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dataprocessor/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="52" column="62" lean-forward="true" selection-start-line="52" selection-start-column="62" selection-end-line="52" selection-end-column="62" />
+        <state relative-caret-position="115">
+          <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
