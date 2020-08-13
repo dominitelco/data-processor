@@ -45,10 +45,8 @@ public class App
     }
 
     private static boolean isInCurrentMonth(DataModel model) {
-        LocalDate date =LocalDate.now();
-        Date initDate = model.getInitDate().getTime();
-        Date endDate = model.getEndDate().getTime();
-        return true;
+        Calendar now = Calendar.getInstance();
+        return now.DAY_OF_MONTH == model.getEndDate().DAY_OF_MONTH;
     }
 
 }
