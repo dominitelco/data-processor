@@ -33,6 +33,7 @@ public class App
         System.out.print("Total lines: " + decorator.decorateLines().size());
         for (int i = 1 ; i < decorator.decorateLines().size(); i++) {
             String line = decorator.decorateLines().get(i);
+            System.out.print(line);
             DataModel model = new DataModel().getFromStringLine(line);
             if (isInCurrentMonth(model)) {
                 totalMesActual += model.getKilobytesConsumed().longValue() * 5L;
@@ -45,8 +46,10 @@ public class App
     }
 
     private static boolean isInCurrentMonth(DataModel model) {
-        Calendar now = Calendar.getInstance();
-        return now.DAY_OF_MONTH == model.getEndDate().DAY_OF_MONTH;
+        Calendar cal = Calendar.getInstance();
+        System.out.print(cal.getTime().getMonth());
+        System.out.print(model.getEndDate().getTime().getMonth());
+        return  cal.getTime().getMonth() == model.getEndDate().getTime().getMonth();
     }
 
 }
