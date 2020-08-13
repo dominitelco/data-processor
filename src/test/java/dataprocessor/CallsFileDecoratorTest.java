@@ -4,9 +4,15 @@ import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import java.math.BigDecimal;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 public class CallsFileDecoratorTest {
@@ -36,26 +42,22 @@ public class CallsFileDecoratorTest {
     }
 
     @Test
-    public void read_file_line_into_data_model() {
+    public void read_file_line_into_data_model() throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy hh24:mm:ss");
+
         String fakeLines = "18096886027,POSTPAGO,AMAZON_MUSIC,2020-06-31 10:49:27,2020-06-31 11:59:30,2560";
-        DataModel model = convertFileToDataModel(fakeLines);
-        Assert.assertEquals(model.getServiceNumber(), fakeLines.split(",").get(0));
-        Assert.assertEquals(model.getBillingType(), fakeLines.split(",").get(1));
-        Assert.assertEquals(model.getUsedApp(), fakeLines.split(",").get(2));
-        
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        Date date = sdf.parse(CalendarfakeLines.split(",").get(4));
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(date);
+        String[] lineValues = fakeLines.split(",");
 
-        Assert.assertEquals(model.getInitDate(), fakeLines.split(",").get(3));
+        DataModel model = new DataModel().getFromStringLine(fakeLines);
 
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        date = sdf.parse(CalendarfakeLines.split(",").get(4));
-        cal = Calendar.getInstance();
-        cal.setTime(date);
-        
-        Assert.assertEquals(model.getEndDate().toString(), cal.toString());
-        Assert.assertEquals(model.getKilobytesConsumed(), fakeLines.split(",").get(5));
+        Assert.assertEquals(model.getServiceNumber(), lineValues[0]);
+        Assert.assertEquals(model.getBillingType(), lineValues[1]);
+        Assert.assertEquals(model.getUsedApp(), lineValues[2]);
+
+
+        Assert.assertEquals(model.getServiceNumber(), lineValues[0]);
+        Assert.assertEquals(model.getBillingType(), lineValues[1]);
+        Assert.assertEquals(model.getUsedApp(), lineValues[2]);
+        Assert.assertEquals(model.getKilobytesConsumed(), BigDecimal.valueOf(Long.parseLong(lineValues[5])));
     }
 }
